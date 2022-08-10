@@ -26,16 +26,21 @@ const TabsContainer = styled.ul`
   cursor: pointer;
 `;
 export const LeftSideBar = () => {
+  const tabsToMap = [
+    "Home",
+    "My Files",
+    "Recent Files",
+    "Shared Files",
+    "File Request",
+    "Trash",
+  ];
   return (
     <SideBarContainer>
       <Gradient />
       <TabsContainer>
-        <TabTitle title="Home" />
-        <TabTitle title="My Files" />
-        <TabTitle title="Recent Files" />
-        <TabTitle title="Shared Files" />
-        <TabTitle title="File Request" />
-        <TabTitle title="Trash" />
+        {tabsToMap.map((ele) => {
+          return <TabTitle title={ele} />;
+        })}
       </TabsContainer>
     </SideBarContainer>
   );

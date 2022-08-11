@@ -1,8 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-type Palette = Record<string, string>;
+export type Palette = typeof palette;
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 	* {
     box-sizing: border-box;
     margin: 0;
@@ -22,14 +21,17 @@ export const GlobalStyle = createGlobalStyle`
 	}
 `;
 
-const palette: Palette = {
+const palette = {
   darkblue: "#343951",
   orange: "#ff9f00",
+  lightorange: "#FFB233",
   darkgray: "#858A9D",
   gray: "#bcbeca",
-  bglightgray: "#f5f6fc",
   blue: "#689ff8",
   green: "#4ac29d",
+  white: "#ffffff",
+  bglightgray: "#f5f6fc",
   inactive: "#c4c4c4",
+  dialog: "#464c61",
 };
 export default palette;

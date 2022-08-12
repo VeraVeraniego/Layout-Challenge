@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { AsideRight } from "./components/AsideRight/AsideRight";
 import { LeftSideBar } from "./components/LeftSideBar/LeftSideBar";
 import { MainContent } from "./components/MainContent/MainContent";
-import { GlobalStyle } from "./theme";
+import { defaultTheme, GlobalStyle } from "./theme";
 const PageContainer = styled.div`
   background-color: #fff;
   width: 100vw;
@@ -13,12 +13,14 @@ const PageContainer = styled.div`
 `;
 function App() {
   return (
-    <PageContainer>
-      <GlobalStyle />
-      <LeftSideBar></LeftSideBar>
-      <MainContent></MainContent>
-      <AsideRight></AsideRight>
-    </PageContainer>
+    <ThemeProvider theme={defaultTheme}>
+      <PageContainer>
+        <GlobalStyle />
+        <LeftSideBar></LeftSideBar>
+        <MainContent></MainContent>
+        <AsideRight></AsideRight>
+      </PageContainer>
+    </ThemeProvider>
   );
 }
 

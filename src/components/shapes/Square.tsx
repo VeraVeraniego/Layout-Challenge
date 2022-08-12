@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import palette, { Palette } from "../../theme";
+import { defaultTheme, Palette } from "../../theme";
 interface IProps {
-  color: keyof Palette;
+  color?: keyof Palette;
   className?: string;
   borderRadius?: string;
-  width: number;
+  width?: number;
   height?: number;
+  borderColor?: keyof Palette;
 }
 export const Square = ({
   color,
@@ -14,10 +15,12 @@ export const Square = ({
   height,
   borderRadius,
   className,
+  borderColor,
 }: IProps) => {
   //bordercolor missing
   return (
     <SquaresShape
+      borderColor={borderColor}
       color={color}
       width={width}
       height={height}
@@ -27,8 +30,16 @@ export const Square = ({
   );
 };
 const SquaresShape = styled("div")<IProps>`
-  width: ${(props) => props.width}px;
-  height: ${(props) => (props.height ? props.height : props.width)}px;
-  background-color: ${(props) => palette[props.color]};
+  width: ${(props) => (props.width ? props.width : 15)}px;
+  height: ${(props) => (props.height ? props.height : props.width || 15)}px;
+  ${(props) =>
+    props.borderColor
+      ? `border: 1px solid ${defaultTheme.palette[props.borderColor]}`
+      : ""};
+  ${(props) =>
+    props.color
+      ? `background-color:  
+    ${defaultTheme.palette[props.color!]}`
+      : ""};
   border-radius: ${(props) => (props.borderRadius ? props.borderRadius : "0")};
 `;

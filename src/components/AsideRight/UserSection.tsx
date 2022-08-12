@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import palette from "../../theme";
 import { Square } from "../shapes/Square";
 
 export const UserSection = () => {

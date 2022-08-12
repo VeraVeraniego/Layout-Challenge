@@ -2,17 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { defaultTheme, GlobalStyle } from "../../theme";
 import { Square } from "../shapes/Square";
-export const TabTitle = ({
-  title,
-  activeTab,
-  index,
-  onClick,
-}: {
+interface IProps {
   title: string;
   activeTab: number;
   index: number;
   onClick: (T: number) => void;
-}) => {
+}
+export const TabTitle = ({ title, activeTab, index, onClick }: IProps) => {
   return (
     <ListItem
       onClick={() => {

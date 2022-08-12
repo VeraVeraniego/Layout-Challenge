@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { defaultTheme, Palette } from "../../theme";
+
 interface IProps {
   color?: keyof Palette;
   className?: string;
@@ -17,7 +18,6 @@ export const Square = ({
   className,
   borderColor,
 }: IProps) => {
-  //bordercolor missing
   return (
     <SquaresShape
       borderColor={borderColor}

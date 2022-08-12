@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-export type Palette = typeof palette;
+export type Palette = typeof defaultTheme.palette;
 
 export const GlobalStyle = createGlobalStyle`
 	* {
@@ -21,17 +21,18 @@ export const GlobalStyle = createGlobalStyle`
 	}
 `;
 
-const palette = {
-  darkblue: "#343951",
-  orange: "#ff9f00",
-  lightorange: "#FFB233",
-  darkgray: "#858A9D",
-  gray: "#bcbeca",
-  blue: "#689ff8",
-  green: "#4ac29d",
-  white: "#ffffff",
-  bglightgray: "#f5f6fc",
-  inactive: "#c4c4c4",
-  dialog: "#464c61",
+export const defaultTheme = {
+  palette: {
+    darkblue: "#343951",
+    orange: "#ff9f00",
+    lightorange: "#FFB233",
+    darkgray: "#858A9D",
+    gray: "#bcbeca",
+    blue: "#689ff8",
+    green: "#4ac29d",
+    white: "#ffffff",
+    bglightgray: "#f5f6fc",
+    inactive: "#c4c4c4",
+    dialog: "#464c61",
+  },
 };
-export default palette;

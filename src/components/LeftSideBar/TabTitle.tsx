@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import palette, { GlobalStyle } from "../../theme";
-import { SquareBorder } from "../shapes/SquareBorder";
+import { defaultTheme, GlobalStyle } from "../../theme";
+import { Square } from "../shapes/Square";
 export const TabTitle = ({
   title,
   activeTab,
@@ -21,14 +21,22 @@ export const TabTitle = ({
     >
       <GlobalStyle />
       <Highlight active={activeTab === index} />
-      <TabSquareBorder color={activeTab === index ? "white" : "darkgray"} />
-      <Title color={activeTab === index ? palette.white : palette.darkgray}>
+      <TabSquareBorder
+        borderColor={activeTab === index ? "white" : "darkgray"}
+      />
+      <Title
+        color={
+          activeTab === index
+            ? defaultTheme.palette.white
+            : defaultTheme.palette.darkgray
+        }
+      >
         {title}
       </Title>
     </ListItem>
   );
 };
-const TabSquareBorder = styled(SquareBorder)`
+const TabSquareBorder = styled(Square)`
   margin-left: 25px;
 `;
 const Title = styled("span")`
@@ -48,7 +56,8 @@ const ListItem = styled.li`
 const Highlight = styled("div")<{ active: boolean }>`
   height: 44px;
   width: 7px;
-  background-color: ${(props) => (props.active ? palette.white : "inherit")};
+  background-color: ${(props) =>
+    props.active ? defaultTheme.palette.white : "inherit"};
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px;
 `;

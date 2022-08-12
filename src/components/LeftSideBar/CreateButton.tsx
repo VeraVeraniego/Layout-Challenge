@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import palette from "../../theme";
-import { SquareBorder } from "../shapes/SquareBorder";
+import { defaultTheme } from "../../theme";
+import { Square } from "../shapes/Square";
 
 export const CreateButton = () => {
   const optionsToCreate = [
@@ -16,7 +16,7 @@ export const CreateButton = () => {
         {optionsToCreate.map((ele, index) => {
           return (
             <Option key={index}>
-              <SquareBorder color="bglightgray" />
+              <Square borderColor="bglightgray" />
               <span>{ele}</span>
             </Option>
           );
@@ -30,7 +30,7 @@ export const CreateButton = () => {
   );
 };
 const Option = styled.div`
-  color: ${palette.white};
+  color: ${defaultTheme.palette.white};
   display: flex;
   flex-direction: row;
   margin-left: 15%;
@@ -50,7 +50,7 @@ const DialogOptionsContainer = styled.div`
   padding-top: 14px;
   width: 12vw;
   height: 110px;
-  background-color: ${palette.dialog};
+  background-color: ${defaultTheme.palette.dialog};
   /* position: absolute; */
   border-radius: 9px;
   &::after {
@@ -58,7 +58,7 @@ const DialogOptionsContainer = styled.div`
     position: absolute;
     bottom: -35px;
     border: 25px solid transparent;
-    border-top-color: ${palette.dialog};
+    border-top-color: ${defaultTheme.palette.dialog};
     width: 0px;
     border-radius: 15px;
   }
@@ -75,8 +75,8 @@ const Button = styled.button`
   border: none;
   width: 9.9vw;
   height: 30px;
-  background-color: ${palette.orange};
-  color: ${palette.white};
+  background-color: ${defaultTheme.palette.orange};
+  color: ${defaultTheme.palette.white};
   border-radius: 7px;
   display: flex;
   align-items: center;
@@ -90,7 +90,7 @@ const Button = styled.button`
     height: 21px;
     vertical-align: middle;
     line-height: 21px;
-    background-color: ${palette.lightorange};
+    background-color: ${defaultTheme.palette.lightorange};
     border-radius: 4px;
     margin-left: auto;
     margin-right: 4px;

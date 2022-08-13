@@ -9,6 +9,7 @@ interface IProps {
   width?: number;
   height?: number;
   borderColor?: keyof Palette;
+  children?: any;
 }
 export const Square = ({
   color,
@@ -17,6 +18,7 @@ export const Square = ({
   borderRadius,
   className,
   borderColor,
+  children,
 }: IProps) => {
   return (
     <SquaresShape
@@ -26,7 +28,9 @@ export const Square = ({
       height={height}
       borderRadius={borderRadius}
       className={className}
-    />
+    >
+      {children}
+    </SquaresShape>
   );
 };
 const SquaresShape = styled("div")<IProps>`

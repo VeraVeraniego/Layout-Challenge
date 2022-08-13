@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 import { defaultTheme, Palette } from "../../theme";
 import { Square } from "../shapes/Square";
@@ -32,17 +32,18 @@ export const StorageChartAndInfo = () => {
       <Title>Storage</Title>
       <ThePieChart data={data} />
       <LegendContainer>
-        {data.map((ele) => {
+        {data.map((ele, index) => {
           return (
-            <>
+            <Fragment key={index}>
               <LegendRow
+                key={index}
                 name={ele.name}
                 color={ele.color}
                 files={ele.files}
                 value={ele.value}
               ></LegendRow>
               <HR />
-            </>
+            </Fragment>
           );
         })}
       </LegendContainer>

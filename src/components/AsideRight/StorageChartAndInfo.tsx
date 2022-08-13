@@ -34,19 +34,32 @@ export const StorageChartAndInfo = () => {
       <LegendContainer>
         {data.map((ele) => {
           return (
-            <LegendRow
-              name={ele.name}
-              color={ele.color}
-              files={ele.files}
-              value={ele.value}
-            ></LegendRow>
+            <>
+              <LegendRow
+                name={ele.name}
+                color={ele.color}
+                files={ele.files}
+                value={ele.value}
+              ></LegendRow>
+              <HR />
+            </>
           );
         })}
       </LegendContainer>
     </Container>
   );
 };
-const LegendContainer = styled.div``;
+const HR = styled.hr`
+  border: 1px solid ${defaultTheme.palette.hr};
+`;
+
+const LegendContainer = styled.div`
+  gap: 9px;
+  margin-top: 27px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+`;
 const Title = styled.h2`
   font-size: 20px;
   line-height: 23px;

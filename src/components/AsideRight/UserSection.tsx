@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { defaultTheme } from "../../theme";
 import { Square } from "../shapes/Square";
 
 export const UserSection = () => {
   return (
     <UserInfoContainer>
       <Group1>
-        <Square color="inactive" width={15} />
-        <Square color="inactive" width={15} />
+        <Square color={defaultTheme.palette.inactive} width={15} />
+        <Square color={defaultTheme.palette.inactive} width={15} />
       </Group1>
       <Group2>
         <span>Name</span>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { defaultTheme, Palette } from "../../theme";
 
 interface IProps {
-  color?: keyof Palette;
+  color?: keyof Palette | string;
   className?: string;
   borderRadius?: string;
   width?: number;
@@ -39,7 +39,7 @@ const SquaresShape = styled("div")<IProps>`
   ${(props) =>
     props.color
       ? `background-color:  
-    ${defaultTheme.palette[props.color!]}`
+    ${props.color}`
       : ""};
   border-radius: ${(props) => (props.borderRadius ? props.borderRadius : "0")};
 `;

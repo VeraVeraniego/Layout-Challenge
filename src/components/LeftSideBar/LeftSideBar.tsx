@@ -4,7 +4,7 @@ import { defaultTheme, GlobalStyle } from "../../theme";
 import { CreateButton } from "./CreateButton";
 import { TabTitle } from "./TabTitle";
 
-export const LeftSideBar = () => {
+export const LeftSideBar = ({ className }: { className?: string }) => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const tabsToMap = [
@@ -21,7 +21,7 @@ export const LeftSideBar = () => {
   };
 
   return (
-    <SideBarContainer>
+    <SideBarContainer className={className}>
       <GlobalStyle />
       <Gradient />
       <TabsContainer>
@@ -45,7 +45,6 @@ export const LeftSideBar = () => {
 
 const SideBarContainer = styled.section`
   background-color: ${defaultTheme.palette.darkblue};
-  width: 16.5vw;
   position: relative;
 `;
 const Gradient = styled.div`

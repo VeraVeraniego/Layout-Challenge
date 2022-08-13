@@ -1,19 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../theme";
+import { Square } from "../shapes/Square";
 import { StorageChartAndInfo } from "./StorageChartAndInfo";
 import { UserSection } from "./UserSection";
 const AsideContainer = styled.section`
-  width: 24.5vw;
   background-color: ${defaultTheme.palette.bglightgray};
 `;
-export const AsideRight = () => {
+export const AsideRight = ({ className }: { className?: string }) => {
   return (
-    <AsideContainer>
+    <AsideContainer className={className}>
       <UserSection />
       <HR />
       <AsideBodyContainer>
         <StorageChartAndInfo />
+        <Square
+          color={defaultTheme.palette.white}
+          width={194}
+          height={202}
+          borderRadius="18px"
+        ></Square>
       </AsideBodyContainer>
     </AsideContainer>
   );

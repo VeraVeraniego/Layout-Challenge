@@ -39,11 +39,11 @@ const SquaresShape = styled("div")<IProps>`
   ${(props) =>
     props.borderColor
       ? `border: 1px solid ${defaultTheme.palette[props.borderColor]}`
-      : ""};
+      : "border: 1px solid transparent;"};
   ${(props) =>
     props.color
       ? `background-color:  
     ${props.color}`
-      : ""};
+      : "background-color:transparent;"};
   border-radius: ${(props) => (props.borderRadius ? props.borderRadius : "0")};
 `;

@@ -3,8 +3,13 @@ import { Square } from "../shapes/Square";
 import { MdMoreVert } from "react-icons/md";
 import styled from "styled-components";
 import { defaultTheme } from "../../theme";
-
-export const Folder = ({ subfolders }: { subfolders: number }) => {
+export interface IFolderData {
+  title: string;
+  subfolders: number;
+  date: string;
+}
+export const Folder = ({ title, subfolders, date }: IFolderData) => {
+  const auxArray = Array(subfolders).fill("");
   return (
     <FolderContainer color="white" height={133}>
       <MoreIcon />
@@ -13,17 +18,19 @@ export const Folder = ({ subfolders }: { subfolders: number }) => {
           <SquareFront color="orange" width={30} height={26} />
         </SquareBG>
         <CirclesContainer>
-          <Circle
-            // borderRadius="50%"
-            // color="green"
-            borderColor="green"
-            width={18}
-          ></Circle>
-          <CircleOverlapped></CircleOverlapped>
+          {auxArray.map((ele, index) => {
+            if (index === 0) return <Circle />;
+            if (index < 2) return <Circle2 />;
+            if (index === 2) {
+              if (subfolders > 3)
+                return <Circle3>+{subfolders - index}</Circle3>;
+              else return <Circle3 />;
+            }
+          })}
         </CirclesContainer>
       </Row1>
-      <h3></h3>
-      <span></span>
+      <h3>{title}</h3>
+      <span>Created: {date}</span>
     </FolderContainer>
   );
 };
@@ -31,12 +38,28 @@ const Circle = styled(Square)`
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  /* background-color: ${defaultTheme.palette.white}; */
-  /* border-color: ${defaultTheme.palette.gray}; */
+  background-color: ${defaultTheme.palette.white};
+  border-color: ${defaultTheme.palette.gray};
+
+  /* border: 1px solid blue; */
 `;
-const CircleOverlapped = styled(Circle)`
+const Circle2 = styled(Circle)`
   position: relative;
   left: -6px;
+`;
+const Circle3 = styled(Circle2)`
+  /* border: 1px solid green; */
+  left: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > span {
+    font-size: 8px;
+    line-height: 9px;
+  }
+  /* text-align: center;
+  vertical-align: center;
+  line-height: 100%; */
 `;
 const CirclesContainer = styled.div`
   display: flex;
@@ -76,4 +99,17 @@ const FolderContainer = styled(Square)`
   flex-basis: 160px;
   box-shadow: 0px 4px 16px rgba(58, 58, 58, 0.07);
   border-radius: 12px;
+
+  & > h3 {
+    color: ${defaultTheme.palette.darkblue};
+    margin-top: 29px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  & > span {
+    color: ${defaultTheme.palette.darkgray};
+    margin-top: 10px;
+    font-size: 8px;
+    line-height: 9px;
+  }
 `;

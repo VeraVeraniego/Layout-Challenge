@@ -2,8 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../theme";
 import { Square } from "../shapes/Square";
-import { Folder } from "./Folder";
+import { Folder, IFolderData } from "./Folder";
 export const MainContent = ({ className }: { className?: string }) => {
+  const foldersData: Array<IFolderData> = [
+    { title: "App Project", subfolders: 2, date: "20.02.2022" },
+    { title: "Project: fitbit", subfolders: 3, date: "18.05.2021" },
+    { title: "Client Documents", subfolders: 5, date: "4.03.2020" },
+  ];
   return (
     <MainSection className={className}>
       <SearchBar color="white">
@@ -18,9 +23,14 @@ export const MainContent = ({ className }: { className?: string }) => {
         </div>
       </SectionTitle>
       <FoldersContainer>
-        <Folder subfolders={1} />
-        <Folder subfolders={2} />
-        <Folder subfolders={5} />
+        {foldersData.map((ele, index) => (
+          <Folder
+            title={ele.title}
+            subfolders={ele.subfolders}
+            date={ele.date}
+            key={index}
+          />
+        ))}
       </FoldersContainer>
     </MainSection>
   );

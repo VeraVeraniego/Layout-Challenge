@@ -5,6 +5,11 @@ import { Square } from "../shapes/Square";
 import { FileRow, IFile } from "./FileRow";
 import { Folder, IFolderData } from "./Folder";
 export const MainContent = ({ className }: { className?: string }) => {
+  const sharedFolders: Array<IFolderData> = [
+    { title: "Landing Page", date: "02.02.2022" },
+    { title: "Illustration Pack", date: "02.02.2022" },
+    { title: "CV Design", date: "02.02.2022" },
+  ];
   const foldersData: Array<IFolderData> = [
     { title: "App Project", subfolders: 2, date: "20.02.2022" },
     { title: "Project: fitbit", subfolders: 3, date: "18.05.2021" },
@@ -79,6 +84,10 @@ export const MainContent = ({ className }: { className?: string }) => {
           />
         ))}
       </ListedFiles>
+      <SectionTitle>
+        <h2>Share with me</h2>
+        <span>View All</span>
+      </SectionTitle>
     </MainSection>
   );
 };

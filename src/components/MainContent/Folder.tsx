@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { defaultTheme } from "../../theme";
 export interface IFolderData {
   title: string;
-  subfolders: number;
+  subfolders?: number;
   date: string;
 }
 export const Folder = ({ title, subfolders, date }: IFolderData) => {

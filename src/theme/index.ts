@@ -30,6 +30,7 @@ export const defaultTheme = {
     gray: "#bcbeca",
     blue: "#689ff8",
     green: "#4ac29d",
+    red: "#ff6860",
     white: "#ffffff",
     bglightgray: "#f5f6fc",
     inactive: "#c4c4c4",

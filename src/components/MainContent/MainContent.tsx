@@ -64,6 +64,11 @@ export const MainContent = ({ className }: { className?: string }) => {
         <span>View All</span>
       </SectionTitle>
       <ListedFiles>
+        <RowHead>
+          <span>Name</span>
+          <span>Members</span>
+          <span>Last Modified</span>
+        </RowHead>
         {recentFiles.map((ele, index) => (
           <FileRow
             key={index}
@@ -77,7 +82,30 @@ export const MainContent = ({ className }: { className?: string }) => {
     </MainSection>
   );
 };
-const ListedFiles = styled.section``;
+const RowHead = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 60px;
+  &:first-child span:first-of-type {
+    margin-right: auto;
+  }
+  span:last-of-type {
+    margin-right: 78px;
+  }
+  & > span {
+    color: ${defaultTheme.palette.darkgray};
+    font-size: 12px;
+    line-height: 14px;
+  }
+`;
+const ListedFiles = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
 const FoldersContainer = styled.div`
   display: flex;
   flex-wrap: wrap;

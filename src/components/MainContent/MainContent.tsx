@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../theme";
 import { Square } from "../shapes/Square";
+import { Folder } from "./Folder";
 export const MainContent = ({ className }: { className?: string }) => {
   return (
     <MainSection className={className}>
@@ -16,14 +17,31 @@ export const MainContent = ({ className }: { className?: string }) => {
           <Square borderColor="darkgray" />
         </div>
       </SectionTitle>
+      <FoldersContainer>
+        <Folder subfolders={1} />
+        <Folder subfolders={2} />
+        <Folder subfolders={5} />
+      </FoldersContainer>
     </MainSection>
   );
 };
-const SectionTitle = styled.div`
+const FoldersContainer = styled.div`
   display: flex;
+  gap: 14px;
   justify-content: space-between;
+`;
+const SectionTitle = styled.div`
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & > h2 {
+    font-size: 20px;
+    line-height: 23px;
+  }
   & > div {
     display: flex;
+    gap: 10px;
   }
 `;
 const Input = styled.input`

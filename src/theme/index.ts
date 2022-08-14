@@ -35,5 +35,6 @@ export const defaultTheme = {
     inactive: "#c4c4c4",
     dialog: "#464c61",
     hr: "#e0e7f1",
+    lightyellow: "#FFD999",
   },
 };

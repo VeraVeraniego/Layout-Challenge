@@ -23,7 +23,7 @@ export const Folder = ({ subfolders }: { subfolders: number }) => {
         <CirclesContainer>
           <Circle
             // borderRadius="50%"
-            color="green"
+            // color="green"
             // borderColor="gray"
             width={18}
           ></Circle>
@@ -39,8 +39,8 @@ const Circle = styled(Square)`
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  color: gray;
-  border-color: aqua !important;
+  background-color: ${defaultTheme.palette.white};
+  border-color: ${defaultTheme.palette.gray};
 `;
 const CircleOverlapped = styled(Circle)`
   position: relative;

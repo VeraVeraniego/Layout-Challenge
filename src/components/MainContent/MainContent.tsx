@@ -6,7 +6,7 @@ import { Folder } from "./Folder";
 export const MainContent = ({ className }: { className?: string }) => {
   return (
     <MainSection className={className}>
-      <SearchBar color={defaultTheme.palette.white}>
+      <SearchBar color="white">
         <Square borderColor="gray" />
         <Input placeholder="Search" />
       </SearchBar>

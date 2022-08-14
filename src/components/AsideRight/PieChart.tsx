@@ -1,14 +1,14 @@
 import React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import styled from "styled-components";
-import { defaultTheme } from "../../theme";
+import { defaultTheme, Palette } from "../../theme";
 import { Square } from "../shapes/Square";
 interface IProps {
   data: {
     name: string;
     files: number;
     value: number;
-    color: string;
+    color: keyof Palette;
   }[];
 }
 export const ThePieChart = ({ data }: IProps) => {
@@ -28,7 +28,10 @@ export const ThePieChart = ({ data }: IProps) => {
               dataKey="value"
             >
               {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={defaultTheme.palette[entry.color]}
+                />
               ))}
             </Pie>
           </PieChart>

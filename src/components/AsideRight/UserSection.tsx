@@ -7,8 +7,8 @@ export const UserSection = () => {
   return (
     <UserInfoContainer>
       <Group1>
-        <Square color={defaultTheme.palette.inactive} width={15} />
-        <Square color={defaultTheme.palette.inactive} width={15} />
+        <Square color="inactive" width={15} />
+        <Square color="inactive" width={15} />
       </Group1>
       <Group2>
         <span>Name</span>

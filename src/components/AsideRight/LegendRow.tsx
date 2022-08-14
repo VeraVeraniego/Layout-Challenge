@@ -14,12 +14,7 @@ export const LegendRow = ({ name, files, value, color }: Data) => {
         <br />
         <span>{files} files</span>
       </Title>
-      <SizeSquare
-        width={54}
-        height={21}
-        color={defaultTheme.palette.white}
-        borderRadius="4px"
-      >
+      <SizeSquare width={54} height={21} color="white" borderRadius="4px">
         <span>{value} GB</span>
       </SizeSquare>
     </RowContainer>

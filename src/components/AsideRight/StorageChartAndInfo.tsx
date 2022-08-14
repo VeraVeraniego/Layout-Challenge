@@ -8,7 +8,7 @@ export interface Data {
   name: string;
   files: number;
   value: number;
-  color: string | keyof Palette;
+  color: keyof Palette;
 }
 export const StorageChartAndInfo = () => {
   const data: Data[] = [
@@ -16,16 +16,16 @@ export const StorageChartAndInfo = () => {
       name: "Documents",
       files: 3000,
       value: 200,
-      color: defaultTheme.palette.orange,
+      color: "orange",
     },
     {
       name: "Photos",
       files: 420,
       value: 125,
-      color: defaultTheme.palette.blue,
+      color: "blue",
     },
-    { name: "Videos", files: 69, value: 75, color: defaultTheme.palette.green },
-    { name: "Audios", files: 159, value: 50, color: defaultTheme.palette.gray },
+    { name: "Videos", files: 69, value: 75, color: "green" },
+    { name: "Audios", files: 159, value: 50, color: "gray" },
   ];
   return (
     <Container>

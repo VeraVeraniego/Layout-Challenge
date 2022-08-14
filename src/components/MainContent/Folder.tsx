@@ -6,25 +6,17 @@ import { defaultTheme } from "../../theme";
 
 export const Folder = ({ subfolders }: { subfolders: number }) => {
   return (
-    <FolderContainer color={defaultTheme.palette.white} height={133}>
+    <FolderContainer color="white" height={133}>
       <MoreIcon />
       <Row1>
-        <SquareBG
-          color={defaultTheme.palette.lightyellow}
-          width={30}
-          height={26}
-        >
-          <SquareFront
-            color={defaultTheme.palette.orange}
-            width={30}
-            height={26}
-          />
+        <SquareBG color="lightyellow" width={30} height={26}>
+          <SquareFront color="orange" width={30} height={26} />
         </SquareBG>
         <CirclesContainer>
           <Circle
             // borderRadius="50%"
             // color="green"
-            // borderColor="gray"
+            borderColor="green"
             width={18}
           ></Circle>
           <CircleOverlapped></CircleOverlapped>
@@ -39,8 +31,8 @@ const Circle = styled(Square)`
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: ${defaultTheme.palette.white};
-  border-color: ${defaultTheme.palette.gray};
+  /* background-color: ${defaultTheme.palette.white}; */
+  /* border-color: ${defaultTheme.palette.gray}; */
 `;
 const CircleOverlapped = styled(Circle)`
   position: relative;

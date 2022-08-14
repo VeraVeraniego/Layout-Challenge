@@ -14,11 +14,7 @@ export const AsideRight = ({ className }: { className?: string }) => {
       <HR />
       <AsideBodyContainer>
         <StorageChartAndInfo />
-        <UpgradeContainer
-          color={defaultTheme.palette.white}
-          height={202}
-          borderRadius="18px"
-        >
+        <UpgradeContainer color="white" height={202} borderRadius="18px">
           <Gradient width={119} height={73} borderRadius="11px" />
           <TextUpgrade>
             Buy more space now!

@@ -2,12 +2,39 @@ import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../theme";
 import { Square } from "../shapes/Square";
+import { FileRow, IFile } from "./FileRow";
 import { Folder, IFolderData } from "./Folder";
 export const MainContent = ({ className }: { className?: string }) => {
   const foldersData: Array<IFolderData> = [
     { title: "App Project", subfolders: 2, date: "20.02.2022" },
     { title: "Project: fitbit", subfolders: 3, date: "18.05.2021" },
     { title: "Client Documents", subfolders: 5, date: "4.03.2020" },
+  ];
+  const recentFiles: Array<IFile> = [
+    {
+      color: "orange",
+      name: "Travel Landing Page",
+      members: 5,
+      lastModified: "Mar 8,2020",
+    },
+    {
+      color: "green",
+      name: "True Photos",
+      members: 12,
+      lastModified: "Mar 9,2020",
+    },
+    {
+      color: "red",
+      name: "Dashboard Structure",
+      members: 10,
+      lastModified: "Mar 20,2020",
+    },
+    {
+      color: "blue",
+      name: "Character Illustration",
+      members: 3,
+      lastModified: "Mar 25,2020",
+    },
   ];
   return (
     <MainSection className={className}>
@@ -36,9 +63,21 @@ export const MainContent = ({ className }: { className?: string }) => {
         <h2>Recent Files</h2>
         <span>View All</span>
       </SectionTitle>
+      <ListedFiles>
+        {recentFiles.map((ele, index) => (
+          <FileRow
+            key={index}
+            color={ele.color}
+            name={ele.name}
+            members={ele.members}
+            lastModified={ele.lastModified}
+          />
+        ))}
+      </ListedFiles>
     </MainSection>
   );
 };
+const ListedFiles = styled.section``;
 const FoldersContainer = styled.div`
   display: flex;
   flex-wrap: wrap;

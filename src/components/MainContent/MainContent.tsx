@@ -32,11 +32,17 @@ export const MainContent = ({ className }: { className?: string }) => {
           />
         ))}
       </FoldersContainer>
+      <SectionTitle>
+        <h2>Recent Files</h2>
+        <span>View All</span>
+      </SectionTitle>
     </MainSection>
   );
 };
 const FoldersContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  margin-top: 23px;
   gap: 14px;
   justify-content: space-between;
 `;
@@ -52,6 +58,11 @@ const SectionTitle = styled.div`
   & > div {
     display: flex;
     gap: 10px;
+  }
+  & > span {
+    font-size: 12px;
+    line-height: 14px;
+    cursor: pointer;
   }
 `;
 const Input = styled.input`

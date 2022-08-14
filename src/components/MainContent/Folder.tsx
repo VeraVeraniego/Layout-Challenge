@@ -96,7 +96,9 @@ const FolderContainer = styled(Square)`
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-basis: 160px;
+  flex-basis: 150px;
+  flex-grow: 1;
+  /* flex */
   box-shadow: 0px 4px 16px rgba(58, 58, 58, 0.07);
   border-radius: 12px;
 

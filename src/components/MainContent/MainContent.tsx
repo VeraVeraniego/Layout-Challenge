@@ -9,9 +9,23 @@ export const MainContent = ({ className }: { className?: string }) => {
         <Square borderColor="gray" />
         <Input placeholder="Search" />
       </SearchBar>
+      <SectionTitle>
+        <h2>Recently Used</h2>
+        <div>
+          <Square borderColor="darkblue" />
+          <Square borderColor="darkgray" />
+        </div>
+      </SectionTitle>
     </MainSection>
   );
 };
+const SectionTitle = styled.div`
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    display: flex;
+  }
+`;
 const Input = styled.input`
   width: 100%;
   height: 100%;

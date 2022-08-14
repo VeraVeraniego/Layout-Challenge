@@ -36,14 +36,12 @@ export const Square = ({
 const SquaresShape = styled("div")<IProps>`
   width: ${(props) => (props.width ? props.width : 15)}px;
   height: ${(props) => (props.height ? props.height : props.width || 15)}px;
-  ${(props) =>
-    props.borderColor
-      ? `border: 1px solid ${defaultTheme.palette[props.borderColor]}`
-      : "border: 1px solid transparent;"};
-  ${(props) =>
-    props.color
-      ? `background-color:  
-    ${props.color}`
-      : "background-color:transparent;"};
+  border: 1px solid
+    ${(props) =>
+      props.borderColor
+        ? `${defaultTheme.palette[props.borderColor]}`
+        : "transparent"};
+  background-color: ${(props) =>
+    props.color ? `${props.color}` : "transparent"};
   border-radius: ${(props) => (props.borderRadius ? props.borderRadius : "0")};
 `;

@@ -48,7 +48,7 @@ const DialogOptionsContainer = styled.div`
   /* margin-top: auto; */
   position: absolute;
   padding-top: 14px;
-  width: 12vw;
+  width: 75%;
   height: 110px;
   background-color: ${defaultTheme.palette.dialog};
   /* position: absolute; */
@@ -73,7 +73,7 @@ const Button = styled.button`
   margin-left: auto;
   margin-right: auto;
   border: none;
-  width: 9.9vw;
+  width: 75%;
   height: 30px;
   background-color: ${defaultTheme.palette.orange};
   color: ${defaultTheme.palette.white};

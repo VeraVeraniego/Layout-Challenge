@@ -28,6 +28,7 @@ const LeftSideBarFlexed = styled(LeftSideBar)`
 const MainContentFlexed = styled(MainContent)`
   /* width: 55.8vw; */
   flex-grow: 1;
+  overflow: auto;
 `;
 const AsideRightFlexed = styled(AsideRight)`
   flex-grow: 0;

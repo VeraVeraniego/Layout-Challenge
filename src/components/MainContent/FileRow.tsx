@@ -15,14 +15,24 @@ export const FileRow = ({ color, name, members, lastModified }: IFile) => {
         <Square color={color} width={21} borderRadius="5px" />
         <h5>{name}</h5>
       </ColorAndName>
-      <h5>{members === 1 ? members + " member" : members + " members"}</h5>
-      <h5></h5>
+      <Members>
+        {members === 1 ? members + " member" : members + " members"}
+      </Members>
+      <Date>{lastModified}</Date>
     </RowContainer>
   );
 };
+const Members = styled.h5`
+  position: absolute;
+  margin-right: 215px;
+`;
+const Date = styled.h5`
+  margin-right: 85px;
+`;
 const ColorAndName = styled.div`
   display: flex;
   align-items: center;
+  margin-right: auto;
   & > h5 {
     color: ${defaultTheme.palette.darkblue};
     margin-left: 12px;
@@ -31,10 +41,15 @@ const ColorAndName = styled.div`
   }
 `;
 const RowContainer = styled(Square)`
+  color: ${defaultTheme.palette.darkgray};
+  font-size: 12px;
+  line-height: 14px;
   padding-left: 13px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 53px;
+
   height: 42px;
   width: 100%;
 `;

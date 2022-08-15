@@ -112,6 +112,7 @@ const FolderRow = styled.div`
   gap: 13px;
 `;
 const RowHead = styled.div`
+  margin-top: 14px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -121,7 +122,7 @@ const RowHead = styled.div`
     margin-right: auto;
   }
   span:last-of-type {
-    margin-right: 78px;
+    margin-right: 68px;
   }
   & > span {
     color: ${defaultTheme.palette.darkgray};

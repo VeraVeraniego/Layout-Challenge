@@ -109,6 +109,7 @@ export const MainContent = ({ className }: { className?: string }) => {
 };
 const FolderRow = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 13px;
 `;
 const RowHead = styled.div`

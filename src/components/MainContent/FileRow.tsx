@@ -41,6 +41,7 @@ const ColorAndName = styled.div`
   }
 `;
 const RowContainer = styled(Square)`
+  position: relative;
   color: ${defaultTheme.palette.darkgray};
   font-size: 12px;
   line-height: 14px;

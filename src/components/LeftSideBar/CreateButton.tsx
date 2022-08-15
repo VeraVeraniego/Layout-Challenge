@@ -64,6 +64,7 @@ const DialogOptionsContainer = styled.div`
   }
 `;
 const Button = styled.button`
+  cursor: pointer;
   position: absolute;
   margin-top: 90vh;
   top: 0;

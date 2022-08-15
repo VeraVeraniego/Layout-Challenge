@@ -37,8 +37,8 @@ const Group2 = styled(Group1)`
   }
 `;
 const UserInfoContainer = styled.section`
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;

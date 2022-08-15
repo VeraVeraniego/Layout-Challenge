@@ -17,13 +17,13 @@ export const ThePieChart = ({ data }: IProps) => {
     <>
       <ChartContainer>
         <PieChartContainer>
-          <PieChart width={160} height={160}>
+          <PieChart width={140} height={140}>
             <Pie
               data={data}
               cx={"50%"}
               cy={"50%"}
-              innerRadius={70}
-              outerRadius={80}
+              innerRadius={60}
+              outerRadius={70}
               paddingAngle={8}
               dataKey="value"
             >
@@ -37,7 +37,7 @@ export const ThePieChart = ({ data }: IProps) => {
           </PieChart>
         </PieChartContainer>
         <InsideDataContainer>
-          <Square width={125} color="white" borderRadius="50%" />
+          <Square width={105} color="white" borderRadius="50%" />
           <Percentage>
             {(spaceUsed * 100) / 500}%
             <br />

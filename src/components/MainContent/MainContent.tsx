@@ -5,11 +5,16 @@ import { defaultTheme } from "../../theme";
 import { Square } from "../shapes/Square";
 import { FileRow, IFile } from "./FileRow";
 import { Folder } from "./Folder";
+import { ProjectFolder } from "./ProjectFolder";
 export const MainContent = ({ className }: { className?: string }) => {
   const sharedFolders: Array<ISharedFolders> = [
-    { title: "Landing Page", date: "02.02.2022" },
-    { title: "Illustration Pack", date: "02.02.2022" },
-    { title: "CV Design", date: "02.02.2022" },
+    { title: "Landing Page", date: "02.02.2022", circles: ["green", "red"] },
+    {
+      title: "Illustration Pack",
+      date: "02.02.2022",
+      circles: ["green", "red", "orange"],
+    },
+    { title: "CV Design", date: "02.02.2022", circles: ["green", "orange"] },
   ];
   const foldersData: Array<IFolderData> = [
     { title: "App Project", subfolders: 2, date: "20.02.2022" },
@@ -89,9 +94,23 @@ export const MainContent = ({ className }: { className?: string }) => {
         <h2>Share with me</h2>
         <span>View All</span>
       </SectionTitle>
+      <FolderRow>
+        {sharedFolders.map((ele, index) => (
+          <ProjectFolder
+            key={index}
+            title={ele.title}
+            date={ele.date}
+            circles={ele.circles}
+          />
+        ))}
+      </FolderRow>
     </MainSection>
   );
 };
+const FolderRow = styled.div`
+  display: flex;
+  gap: 13px;
+`;
 const RowHead = styled.div`
   display: flex;
   flex-direction: row;

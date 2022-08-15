@@ -3,7 +3,6 @@ import { Square } from "../shapes/Square";
 import { MdMoreVert } from "react-icons/md";
 import styled from "styled-components";
 import { defaultTheme } from "../../theme";
-import { IFolderData } from "../../interfaces/interfaces";
 interface IProps {
   title: string;
   subfolders: number;
@@ -94,7 +93,7 @@ const Row1 = styled.div`
 `;
 
 const FolderContainer = styled(Square)`
-  padding: 25px 16px;
+  padding: 25px 12px;
   position: relative;
   display: flex;
   flex-direction: column;

@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { IFolderData, ISharedFolders } from "../../interfaces/interfaces";
 import { defaultTheme } from "../../theme";
 import { Square } from "../shapes/Square";
 import { FileRow, IFile } from "./FileRow";
-import { Folder, IFolderData } from "./Folder";
+import { Folder } from "./Folder";
 export const MainContent = ({ className }: { className?: string }) => {
-  const sharedFolders: Array<IFolderData> = [
+  const sharedFolders: Array<ISharedFolders> = [
     { title: "Landing Page", date: "02.02.2022" },
     { title: "Illustration Pack", date: "02.02.2022" },
     { title: "CV Design", date: "02.02.2022" },

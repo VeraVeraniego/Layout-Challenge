@@ -3,12 +3,14 @@ import { Square } from "../shapes/Square";
 import { MdMoreVert } from "react-icons/md";
 import styled from "styled-components";
 import { defaultTheme } from "../../theme";
-export interface IFolderData {
+import { IFolderData } from "../../interfaces/interfaces";
+interface IProps {
   title: string;
-  subfolders?: number;
+  subfolders: number;
   date: string;
 }
-export const Folder = ({ title, subfolders, date }: IFolderData) => {
+
+export const Folder = ({ title, subfolders, date }: IProps) => {
   const auxArray = Array(subfolders).fill("");
   return (
     <FolderContainer color="white" height={133}>

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../theme";
 import { Square } from "../shapes/Square";
-// import { IData } from "./PieChart";
 import { Data } from "./StorageChartAndInfo";
 
 export const LegendRow = ({ name, files, value, color }: Data) => {

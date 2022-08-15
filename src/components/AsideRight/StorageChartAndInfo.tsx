@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import { defaultTheme, Palette } from "../../theme";
-import { Square } from "../shapes/Square";
 import { LegendRow } from "./LegendRow";
 import { ThePieChart } from "./PieChart";
 export interface Data {

@@ -1,3 +1,5 @@
+import { Palette } from "../theme";
+
 export interface IFolderData {
   title: string;
   subfolders: number;
@@ -7,4 +9,5 @@ export interface IFolderData {
 export interface ISharedFolders {
   title: string;
   date: string;
+  circles: Array<keyof Palette>;
 }

@@ -44,8 +44,3 @@ const UserInfoContainer = styled.section`
   align-items: center;
   justify-content: space-between;
 `;
-// const Test = styled.div`
-//   width: 15px;
-//   height: 15px;
-//   background-color: ${palette.inactive};
-// `;

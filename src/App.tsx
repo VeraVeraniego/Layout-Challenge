@@ -20,16 +20,19 @@ function App() {
 export default App;
 
 const LeftSideBarFlexed = styled(LeftSideBar)`
-  width: 16.5vw;
+  /* width: 16.5vw; */
 
-  /* flex-basis: 200px; */
+  flex-basis: 200px;
+  flex-grow: 0;
 `;
 const MainContentFlexed = styled(MainContent)`
-  width: 55.8vw;
+  /* width: 55.8vw; */
+  flex-grow: 1;
 `;
 const AsideRightFlexed = styled(AsideRight)`
-  /* flex-basis: 252px; */
-  width: 24.5vw;
+  flex-grow: 0;
+  flex-basis: 252px;
+  /* width: 24.5vw; */
 `;
 
 const PageContainer = styled.div`
